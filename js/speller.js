@@ -15,16 +15,29 @@ async function loadPeriodicTable() {
 }
 
 function check(inputWord) {
-	// TODO: determine if `inputWord` can be spelled
-	// with periodic table symbols; return array with
-	// them if so (empty array otherwise)
+	if (inputWord.length > 0) {
+		for (let element of elements) {
+			let symbol = element.symbol.toLowerCase();
+			if (symbol.length >= inputWord.length) {
+				// did the symbol match the first 
+				// one or two characters in `inputWord`
+				if (inputWord.slice(0,symbol.length) == symbol) {
+					// still have characters left
+					if (inputWord.length > symbol.length) {
+						let res = check(inputWord.slice(symbol.length))
+					}
+				}
+			}
+ 		}
+	}
 
 	return [];
 }
 
 function lookup(elementSymbol) {
-	// TODO: return the element entry based on specified
-	// symbol (case-insensitive)
-
-	return {};
+	for (let element of elements) {
+		if (element.symbol.toLowerCase() == elementSymbol) {
+			return element;
+		}
+	}
 }

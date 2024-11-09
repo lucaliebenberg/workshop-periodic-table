@@ -1,5 +1,11 @@
 import Speller from "./speller.js";
 
+// Questions
+// 1. What is the range of elements
+// 2. How to handle 2 letter words AND 1 letter words
+// 3. Checking for pattern matching in dataset based concatanated words
+// 4. DS --> use hashMap; key: symbol, value: word
+// 5. Check if input string exists in hashMap, if so return that word
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
 	ready();
